@@ -1,0 +1,14 @@
+---
+title: "Model Evaluation and Interpretation Notebook"
+output: html_notebook
+---
+
+# Feature importance analysis
+```{r}
+importance <- importance(model)
+print(importance)
+```
+# Visualize feature importance
+```{r}
+varImpPlot(model)
+```

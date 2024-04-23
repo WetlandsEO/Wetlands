@@ -1,0 +1,15 @@
+---
+title: "Deployment and Application Notebook"
+output: html_notebook
+---
+
+# Save trained model for deployment
+```{r}
+saveRDS(model, "wetland_detection_model.rds")
+```
+# Example of using the trained model for prediction
+```{r}
+new_data <- data.frame(elevation = 500, slope = 10, aspect = 180)
+prediction <- predict(model, newdata = new_data)
+print(prediction)
+```

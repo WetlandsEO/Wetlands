@@ -1,0 +1,23 @@
+---
+title: "Exploratory Data Analysis (EDA) Notebook"
+output: html_notebook
+---
+
+# Load necessary libraries
+```{r}
+library(ggplot2)
+```
+
+# Visualize distributions of terrain metrics
+```{r}
+ggplot(wetland_data, aes(x = elevation)) + geom_histogram() + ggtitle("Distribution of Elevation")
+ggplot(wetland_data, aes(x = slope)) + geom_histogram() + ggtitle("Distribution of Slope")
+ggplot(wetland_data, aes(x = aspect)) + geom_histogram() + ggtitle("Distribution of Aspect")
+```
+
+# Visualize relationships between terrain metrics and wetland presence
+```{r}
+ggplot(wetland_data, aes(x = elevation, y = wetland)) + geom_boxplot() + ggtitle("Elevation vs Wetland Presence")
+ggplot(wetland_data, aes(x = slope, y = wetland)) + geom_boxplot() + ggtitle("Slope vs Wetland Presence")
+ggplot(wetland_data, aes(x = aspect, y = wetland)) + geom_boxplot() + ggtitle("Aspect vs Wetland Presence")
+```

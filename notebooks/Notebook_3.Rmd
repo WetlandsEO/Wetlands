@@ -1,0 +1,34 @@
+---
+title: "Data Preprocessing Notebook"
+output: html_notebook
+---
+
+# Load necessary libraries
+```{r}
+library(randomForest)
+```
+
+# Split data into training and testing sets
+```{r}
+set.seed(123)
+train_index <- sample(1:nrow(wetland_data), 0.8 * nrow(wetland_data))
+train_data <- wetland_data[train_index, ]
+test_data <- wetland_data[-train_index, ]
+```
+
+# Train Random Forest model
+```{r}
+model <- randomForest(wetland ~ elevation + slope + aspect, data = train_data)
+```
+
+# Print model summary
+```{r}
+print(model)
+```
+
+# Evaluate model performance
+```{r}
+predictions <- predict(model, newdata = test_data)
+confusion_matrix <- table(predictions, test_data$wetland)
+print(confusion_matrix)
+```

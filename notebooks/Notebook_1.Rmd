@@ -1,0 +1,43 @@
+---
+title: "Data Preprocessing Notebook"
+output: html_notebook
+---
+
+
+# Load necessary libraries
+```{r}
+library(raster)
+```
+
+
+# Load wetland data
+```{r}
+wetland_data <- read.csv("wetland_data.csv")
+```
+
+
+# Data cleaning
+# Remove missing values
+```{r}
+wetland_data <- na.omit(wetland_data)
+```
+
+# Feature engineering
+# Calculate terrain metrics from DEM
+```{r}
+dem <- raster("dem.tif")
+elevation <- extract(dem, wetland_data$lonlat, method = "bilinear")
+slope <- terrain(dem, "slope")
+aspect <- terrain(dem, "aspect")
+```
+
+# Combine terrain metrics with wetland data
+```{r}
+wetland_data <- cbind(wetland_data, elevation, slope, aspect)
+```
+
+# Data transformation
+# Scale features
+```{r}
+wetland_data[, -c(1:2)] <- scale(wetland_data[, -c(1:2)])
+```
