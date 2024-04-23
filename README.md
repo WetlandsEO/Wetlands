@@ -16,6 +16,6 @@ Wetland detection model:
    -  In this notebook, users will evaluate the performance of trained wetland detection models using appropriate evaluation metrics such as accuracy, precision, recall, and F1-score. They will also learn techniques for model interpretation, including feature importance analysis and model visualization, to gain insights into the factors driving wetland detection.
 
 5. **Deployment and Application Notebook**
-   - This notebook covers the deployment and application of wetland detection models in real-world scenarios. Users will learn how to deploy trained models as web applications or APIs using frameworks like Shiny and Flask. Additionally, the notebook demonstrates how to apply the models to new data for wetland mapping and monitoring tasks.
+   - This notebook covers the deployment and application of wetland detection models in real-world scenarios. Users will learn how to deploy trained models as web applications using Shiny Framework. Additionally, the notebook demonstrates how to apply the models to new data for wetland mapping and monitoring tasks.
 
 We hope to provide a comprehensive guide for users to build, evaluate, and deploy wetland detection models using R. Each notebook focuses on a specific aspect of the modeling process, allowing users to follow a structured approach from data preprocessing to model deployment.
